@@ -17,11 +17,13 @@ Automatically download a royalroad story, convert it to kindle format and push i
 
 This script uses requests_html python package. https://html.python-requests.org/. Install it :  
 
-	pip install requests
+	pip install requests-html
 
-This script is based on this royalroad fetcher : [royalroad-reader](https://github.com/lpicou/royalroad-reader/). It also uses [calibre](https://github.com/kovidgoyal/calibre) to convert and push the ebook to the kindle. Everything is included here. 
+This script is based on this royalroad fetcher : [royalroad-reader](https://github.com/lpicou/royalroad-reader/). It also uses [calibre](https://github.com/kovidgoyal/calibre) to convert and push the ebook to the kindle. Everything is included here.  
 
-# Usage 
+You also needs adb drivers to detect your kindle. If they are not properly installed, the script will not be able to transfert the ebook to your device.
+
+# Usage - fetch and copy to your kindle
 
 	fetchAndCopy.py url_of_chapter number_of_chapters name_of_ebook
 
@@ -35,6 +37,11 @@ It reads the chapter content of the URL given ( url_of_chapter ) and goes to the
 name_of_ebook is the name of the ebook which will be pushed to the kindle.  
 
 This script write .html and .azw3 file temporary on the filesystem, and then delete them.
+
+
+# Usage - only fetching, converting to azw3
+
+	python fetch_book.py url_of_chapter number_of_chapters name_of_ebook
 
 ## Example  
 
