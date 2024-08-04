@@ -7,7 +7,7 @@ import time
 
 
 
-def main(next_url,nb_chapters,file_name,writeFile=True):
+def main(next_url,nb_chapters,file_name,writeFile=True,logger=print):
 
     CSS='''<style>
     .chapter-content table {
@@ -25,9 +25,9 @@ def main(next_url,nb_chapters,file_name,writeFile=True):
     </style>
     '''
 
-    print("URL : ",next_url)
-    print("Number of chapters : ",nb_chapters)
-    print("File name : ",file_name,"\n")
+    logger("URL : ",next_url)
+    logger("Number of chapters : ",nb_chapters)
+    logger("File name : ",file_name,"\n")
 
     session = HTMLSession()
     if writeFile:
@@ -51,7 +51,7 @@ def main(next_url,nb_chapters,file_name,writeFile=True):
             chapter_title = (s.html.find('h1.font-white')[0]).text
             S+='<h1 class=\"chapter\">' + chapter_title + '</h1>\n'
 
-            print(i," ",chapter_title)
+            logger(i," ",chapter_title)
             
             #Fetch the chapter content
             chapter_content = s.html.find('.chapter-inner',first=True).html
@@ -81,11 +81,11 @@ def main(next_url,nb_chapters,file_name,writeFile=True):
                 #Fetch the url of the next chapter
                 next_url = "https://www.royalroad.com" + (s.html.find('[rel=next]')[0]).attrs.get("href")
             except:
-                print("Last chapter ! Exiting...")
+                logger("Last chapter ! Exiting...")
                 break
             
         except:
-            print("Error on chapter",i,sys.exc_info()[0])
+            logger("Error on chapter",i,sys.exc_info()[0])
 
             if writeFile:
                 f.close()
@@ -99,7 +99,7 @@ def main(next_url,nb_chapters,file_name,writeFile=True):
 
 
 def printUsage():
-    print("Usage :\n   fetch_book.py url_of_chapter number_of_chapters name_of_ebook")
+    logger("Usage :\n   fetch_book.py url_of_chapter number_of_chapters name_of_ebook")
 
 
 if __name__ == "__main__":

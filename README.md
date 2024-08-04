@@ -1,5 +1,7 @@
 # royalroad-fetchAndConvert
-Automatically download a royalroad story, convert it to kindle format and push it to the device.
+Automatically download a royalroad story, optionally convert it to kindle format and push it to the device.
+
+![GUI Homepage](homepage.png)
 
 
 # Features
@@ -10,6 +12,19 @@ Automatically download a royalroad story, convert it to kindle format and push i
 * Support images
 * Support CSS rules for different stories (e.g. "Everybody Love Large Chest")
 * Convert the story in the azw3 format, and push it to the kindle.
+
+
+# GUI
+
+Download the released graphical version. For now, only the downloading is supported. The ebook generated need to be given to Calibre to convert it & to push it to your device.
+
+## Developpement
+
+The GUI has been developped with Tkinter. Specifically, [customtkinter](https://github.com/tomschimansky/customtkinter). All the front end is inside the file ``gui_rfetcher.py``.
+
+The release is made by following this [official](https://customtkinter.tomschimansky.com/documentation/packaging) tutorial.
+
+# CLI
 
 # Install
 
