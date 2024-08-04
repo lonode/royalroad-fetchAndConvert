@@ -16,7 +16,9 @@ Automatically download a royalroad story, optionally convert it to kindle format
 
 # GUI
 
-Download the released graphical version. For now, only the downloading is supported. The ebook generated need to be given to Calibre to convert it & to push it to your device.
+## Install
+
+Download the latest [released](https://github.com/lonode/royalroad-fetchAndConvert/releases) graphical version. For now, only the downloading is supported. The ebook generated need to be given to Calibre to convert it & to push it to your device.
 
 ## Developpement
 
@@ -26,7 +28,7 @@ The release is made by following this [official](https://customtkinter.tomschima
 
 # CLI
 
-# Install
+## Install
 
 Install Python3 on your operating system. 
 
@@ -40,7 +42,7 @@ Also [Install ADB drivers](https://adb.clockworkmod.com/) if you plan to automat
 
 It also uses [calibre](https://github.com/kovidgoyal/calibre) to convert and push the ebook to the kindle. Everything is included here.  
 
-# Usage
+## Usage
 
 ## Fetch and convert to AZW3 (Kindle Format)
 
